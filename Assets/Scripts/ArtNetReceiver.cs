@@ -11,7 +11,7 @@ public class ArtNetReceiver : MonoBehaviour {
 
     public string DeviceIP;
 
-    private int _listeningPort = 5999;
+    private int _listeningPort = 6454;
     public int ListeningPort
     {
         get
@@ -66,7 +66,7 @@ public class ArtNetReceiver : MonoBehaviour {
     private void ThreadMethod()
     {
         Running = true;
-        udp = new UdpClient(5999);
+        udp = new UdpClient(6454);
         //udp.Client.ReceiveTimeout = 1000; //1sec
 
         while (true)
