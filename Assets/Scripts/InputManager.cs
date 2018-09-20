@@ -5,12 +5,9 @@ using UnityEngine;
 public class InputManager : MonoBehaviour {
 
     public GameObject Canvas;
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.touchCount > 0)
-            Canvas.SetActive(!Canvas.activeInHierarchy);
 
-
+    public void ToggleUI()
+    {
+        Canvas.SetActive(!Canvas.activeInHierarchy);
     }
 }

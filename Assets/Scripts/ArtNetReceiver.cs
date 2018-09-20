@@ -9,17 +9,9 @@ using System.Text;
 
 public class ArtNetReceiver : MonoBehaviour {
 
-    int colorR;
-    int colorG;
-    int colorB;
-
-    public bool BreakThread, Running;
-
     public string DeviceIP;
 
-    static readonly object lockObject = new object();
-
-    private int _listeningPort;
+    private int _listeningPort = 5999;
     public int ListeningPort
     {
         get
@@ -29,12 +21,20 @@ public class ArtNetReceiver : MonoBehaviour {
         set
         {
             _listeningPort = value;
-            Init();
         }
     }
 
-    public Material Mat;
+    public int StartChannel;
 
+    public int ColorRed;
+    public int ColorGreen;
+    public int ColorBlue;
+
+    public bool Running;
+
+    static readonly object lockObject = new object();
+
+    private bool BreakThread;
     private UdpClient udp;
     private Thread receiverThread;
 
@@ -49,11 +49,8 @@ public class ArtNetReceiver : MonoBehaviour {
 
     void Update()
     {
-        Mat.color = new Color((colorR /255.0f), (colorG /255.0f), (colorB /255.0f));
-
-        if(!Running)
+       if(!Running)
         {
-            BreakThread = false;
             receiverThread = new Thread(new ThreadStart(ThreadMethod));
             receiverThread.Start();
         }
@@ -62,19 +59,16 @@ public class ArtNetReceiver : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-        receiverThread.Abort();
-    }
-
-    private void Init() {
+        udp.Client.ReceiveTimeout = 10;
         BreakThread = true;
     }
 
     private void ThreadMethod()
     {
         Running = true;
-        udp = new UdpClient(6002);
-        Debug.Log("Port : " + ListeningPort);
-        //Init();
+        udp = new UdpClient(5999);
+        //udp.Client.ReceiveTimeout = 1000; //1sec
+
         while (true)
         {
             IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
@@ -85,15 +79,14 @@ public class ArtNetReceiver : MonoBehaviour {
             *not being accessed from multiple threads at thesame time*/
             lock (lockObject)
             {
-                //if (BreakThread)
-                //    break;
+                if (BreakThread)
+                    break;
 
-                colorR = receiveBytes[18];
-                colorG = receiveBytes[19];
-                colorB = receiveBytes[20];
+                ColorRed = receiveBytes[17 + StartChannel];
+                ColorGreen = receiveBytes[18 + StartChannel];
+                ColorBlue = receiveBytes[19 + StartChannel];
             }
         }
-        BreakThread = false;
         Running = false;
     }
 }

@@ -5,9 +5,25 @@ using System.Net;
 
 public class ArtNetControllable : Controllable {
 
-    [OSCProperty]
+    [Header("Settings")]
+
+    [OSCProperty(isInteractible = false)]
     public string DeviceIP;
 
-    [OSCProperty]
+    [OSCProperty(isInteractible = false)]
     public int ListeningPort;
+
+    [OSCProperty]
+    public int StartChannel;
+
+    [Header("Values")]
+
+    [OSCProperty(isInteractible = false)]
+    public int ColorRed;
+
+    [OSCProperty(isInteractible = false)]
+    public int ColorGreen;
+
+    [OSCProperty(isInteractible = false)]
+    public int ColorBlue;
 }
