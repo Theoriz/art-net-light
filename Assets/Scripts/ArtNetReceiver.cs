@@ -59,7 +59,10 @@ public class ArtNetReceiver : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-        udp.Client.ReceiveTimeout = 10;
+        receiverThread.Abort();
+        if (udp != null)
+            udp.Close();
+
         BreakThread = true;
     }
 
