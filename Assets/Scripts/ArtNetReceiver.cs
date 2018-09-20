@@ -26,9 +26,9 @@ public class ArtNetReceiver : MonoBehaviour {
 
     public int StartChannel;
 
-    public int ColorRed;
-    public int ColorGreen;
-    public int ColorBlue;
+    public int Red;
+    public int Green;
+    public int Blue;
 
     public bool Running;
 
@@ -82,9 +82,9 @@ public class ArtNetReceiver : MonoBehaviour {
                 if (BreakThread)
                     break;
 
-                ColorRed = receiveBytes[17 + StartChannel];
-                ColorGreen = receiveBytes[18 + StartChannel];
-                ColorBlue = receiveBytes[19 + StartChannel];
+                Red = receiveBytes[17 + StartChannel];
+                Green = receiveBytes[18 + StartChannel];
+                Blue = receiveBytes[19 + StartChannel];
             }
         }
         Running = false;

@@ -19,11 +19,11 @@ public class ArtNetControllable : Controllable {
     [Header("Values")]
 
     [OSCProperty(isInteractible = false)]
-    public int ColorRed;
+    public int Red;
 
     [OSCProperty(isInteractible = false)]
-    public int ColorGreen;
+    public int Green;
 
     [OSCProperty(isInteractible = false)]
-    public int ColorBlue;
+    public int Blue;
 }

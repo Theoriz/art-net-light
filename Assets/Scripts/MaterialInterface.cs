@@ -9,6 +9,6 @@ public class MaterialInterface : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        QuadMaterial.color = new Color((Receiver.ColorRed / 255.0f), (Receiver.ColorGreen / 255.0f), (Receiver.ColorBlue / 255.0f));
+        QuadMaterial.color = new Color((Receiver.Red / 255.0f), (Receiver.Green / 255.0f), (Receiver.Blue / 255.0f));
     }
 }
