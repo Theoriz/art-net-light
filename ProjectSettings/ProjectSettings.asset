@@ -151,7 +151,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.theoriz.artnetreceiver
+    Android: com.theoriz.artnetlight
     Standalone: com.theoriz.art-net-receiver
   buildNumber: {}
   AndroidBundleVersionCode: 1
