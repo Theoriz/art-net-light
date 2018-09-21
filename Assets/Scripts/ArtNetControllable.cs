@@ -26,4 +26,10 @@ public class ArtNetControllable : Controllable {
 
     [OSCProperty(isInteractible = false)]
     public int Blue;
+
+    public override void Awake()
+    {
+        usePresets = false;
+        base.Awake();
+    }
 }

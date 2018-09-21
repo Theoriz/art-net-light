@@ -293,7 +293,7 @@ Prefab:
     - target: {fileID: 224261597021104126, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -909
+      value: -888.88885
       objectReference: {fileID: 0}
     - target: {fileID: 114680107937899142, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
@@ -323,7 +323,7 @@ Prefab:
     - target: {fileID: 114208101852879420, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114208101852879420, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetScript: {fileID: 1025062258}
-  BarColor: {r: 1, g: 1, b: 1, a: 1}
+  BarColor: {r: 0.13995194, g: 0.8018868, b: 0.57791495, a: 1}
   id: 
   folder: 
   debug: 0
