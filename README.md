@@ -15,9 +15,6 @@ Works on Windows, OSX and Android (see [releases](https://github.com/Theoriz/art
 
 - See on the app what you are really sending both with screen color and RGB values on the UI.
 
-# Deployment 
-
-
 
 # Version & modules
 
