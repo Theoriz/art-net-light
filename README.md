@@ -3,7 +3,7 @@
 ## Presentation
 
 This app allows you to turn any device into an Art-Net Light. 
-Works on Windows, OSX and Android (see [releases](https://github.com/Theoriz/art-net-light/releases))
+Works on Windows, OSX and Android (see [releases](https://github.com/Theoriz/art-net-light/releases)).
 
 ## How to use ?
 
