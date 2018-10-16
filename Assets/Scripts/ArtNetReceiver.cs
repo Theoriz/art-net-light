@@ -26,9 +26,45 @@ public class ArtNetReceiver : MonoBehaviour {
 
     public int StartChannel;
 
+    
     public int Red;
     public int Green;
     public int Blue;
+    private bool _receivesHSV;
+    public bool ReceiveHVS
+    {
+        get { return _receivesHSV; }
+        set
+        {
+            _receivesHSV = value;
+            if(_receivesHSV)
+            {
+                Hue = Red;
+                Saturation = Green;
+                Variance = Blue;
+
+                var col = Color.HSVToRGB(Red / 255.0f, Green / 255.0f, Blue / 255.0f);
+                //Debug.Log("Col : " + col + " Red / 255.0f" + (Red / 255.0f));
+                Red = (int)(col.r * 255.0f);
+                Green = (int)(col.g * 255.0f);
+                Blue = (int)(col.b * 255.0f);
+            }
+            else {
+                Red = Hue;
+                Green = Saturation;
+                Blue = Variance;
+                float h, s, v;
+                Color.RGBToHSV(new Color(Red / 255.0f, Green / 255.0f, Blue / 255.0f), out h, out s, out v);
+                Hue = (int)(h * 255.0f);
+                Saturation = (int)(s * 255.0f);
+                Variance = (int)(v * 255.0f);
+            }
+        }
+    }
+    public int Hue;
+    public int Saturation;
+    public int Variance;
+
 
     public bool Running;
 
@@ -88,6 +124,28 @@ public class ArtNetReceiver : MonoBehaviour {
                 Red = receiveBytes[17 + StartChannel];
                 Green = receiveBytes[18 + StartChannel];
                 Blue = receiveBytes[19 + StartChannel];
+                //Debug.Log("R : " + Red + " | G : " + Green + " | B : " + Blue);
+                if (ReceiveHVS)
+                {
+                    Hue = Red;
+                    Saturation = Green;
+                    Variance = Blue;
+
+                    var col = Color.HSVToRGB(Red / 255.0f, Green / 255.0f, Blue / 255.0f);
+                    //Debug.Log("Col : " + col + " Red / 255.0f" + (Red / 255.0f));
+                    Red = (int)(col.r * 255.0f);
+                    Green = (int)(col.g * 255.0f);
+                    Blue = (int)(col.b * 255.0f);
+                }
+                else
+                {
+                    float h, s, v;
+                    Color.RGBToHSV(new Color(Red / 255.0f, Green / 255.0f, Blue / 255.0f), out h, out s, out v);
+                    Hue = (int)(h * 255.0f);
+                    Saturation = (int)(s * 255.0f);
+                    Variance = (int)(v * 255.0f);
+                }
+                    
             }
         }
         Running = false;

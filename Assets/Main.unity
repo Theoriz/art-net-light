@@ -293,7 +293,7 @@ Prefab:
     - target: {fileID: 224261597021104126, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -888.88885
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114680107937899142, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
@@ -313,7 +313,7 @@ Prefab:
     - target: {fileID: 224579476644313692, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224579476644313692, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
@@ -348,6 +348,11 @@ Prefab:
     - target: {fileID: 114208101852879420, guid: 79c2718dd59243e4c90e145349e7dadf,
         type: 2}
       propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224579476644313692, guid: 79c2718dd59243e4c90e145349e7dadf,
+        type: 2}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -388,6 +393,9 @@ MonoBehaviour:
   Red: 0
   Green: 0
   Blue: 0
+  Hue: 0
+  Saturation: 0
+  Variance: 0
   Running: 0
 --- !u!4 &1025062259
 Transform:
@@ -415,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetScript: {fileID: 1025062258}
   BarColor: {r: 0.13995194, g: 0.8018868, b: 0.57791495, a: 1}
-  id: 
+  id: Art-Net_Light
   folder: 
   debug: 0
   targetDirectory: 
@@ -430,6 +438,10 @@ MonoBehaviour:
   Red: 0
   Green: 0
   Blue: 0
+  ReceiveHVS: 0
+  Hue: 0
+  Saturation: 0
+  Variance: 0
 --- !u!114 &1025062261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfe1df72e72e484d911c0e8ea75c84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
   IsPressed: 0
 --- !u!114 &1025062262
 MonoBehaviour:

@@ -27,6 +27,18 @@ public class ArtNetControllable : Controllable {
     [OSCProperty(isInteractible = false)]
     public int Blue;
 
+    [OSCProperty]
+    public bool ReceiveHVS;
+
+    [OSCProperty(isInteractible = false)]
+    public int Hue;
+
+    [OSCProperty(isInteractible = false)]
+    public int Saturation;
+
+    [OSCProperty(isInteractible = false)]
+    public int Variance;
+
     public override void Awake()
     {
         usePresets = false;

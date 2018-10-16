@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour {
 
-    public GameObject Canvas;
-
     public bool IsPressed;
 
     private void Update()
@@ -16,7 +14,7 @@ public class InputManager : MonoBehaviour {
             Application.Quit();
 
 #if UNITY_STANDALONE
-        Debug.Log(EventSystem.current.IsPointerOverGameObject());
+      //  Debug.Log(EventSystem.current.IsPointerOverGameObject());
         if (Input.GetMouseButton(0))
         {
             if (!IsPressed && !EventSystem.current.IsPointerOverGameObject())
