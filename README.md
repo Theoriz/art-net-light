@@ -1,4 +1,4 @@
-# Art-Net Light
+# ArtNet Light
 
 ## Presentation
 
@@ -18,7 +18,7 @@ Works on Windows, OSX and Android (see [releases](https://github.com/Theoriz/art
 ## Pro tip
 
 - You can change the DMX address with OSC (GenUI panel)
-- You can use this app as a simple Art-Net Debugger (RGB values are displayed on interface)
+- You can use this app as a simple Art-Net Debugger (RGB/HSV values are displayed on interface)
 
 /!\ *The GenUI panel allows you to control over OSC this app UI, see [GenUI](https://github.com/theoriz/genui) repository for more informations. Don't bother with it, if you don't want to see it, just click on the red arrow to close the panel.* /!\
 
