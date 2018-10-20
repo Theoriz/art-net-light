@@ -17,10 +17,10 @@ Works on Windows, OSX and Android (see [releases](https://github.com/Theoriz/art
 
 ## Pro tip
 
-- You can change the DMX address with OSC (GenUI panel)
+- You can update the DMX address over OSC (GenUI panel)
 - You can use this app as a simple Art-Net Debugger (RGB/HSV values are displayed on interface)
 
-/!\ *The GenUI panel allows you to control over OSC this app UI, see [GenUI](https://github.com/theoriz/genui) repository for more information.* /!\
+/!\ *The GenUI panel allows you to control over OSC this app, see [GenUI](https://github.com/theoriz/genui) repository for more information.* /!\
 
 ## Version
 
