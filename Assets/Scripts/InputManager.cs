@@ -31,14 +31,17 @@ public class InputManager : MonoBehaviour {
 
 #if UNITY_ANDROID
         // Check if there is a touch
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0)
         {
-            // Check if finger is over a UI element
-            if (!IsPressed && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                ToggleUI();
+                // Check if finger is over a UI element
+                if (!IsPressed && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                {
+                    ToggleUI();
+                    IsPressed = true;
+                }
             }
-            IsPressed = true;
         }
         else
         {
